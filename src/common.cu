@@ -293,7 +293,7 @@ testResult_t testStreamSynchronize(int ngpus, cudaStream_t* streams, ncclComm_t*
        idle = 0;
        continue;
      }
-
+     printf("cudaErr: %d\n", cudaErr);
      if (cudaErr != cudaErrorNotReady) CUDACHECK(cudaErr);
 
 #if NCCL_VERSION_CODE >= NCCL_VERSION(2,4,0)
